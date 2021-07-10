@@ -1,2 +1,6 @@
 autoEnabled=true
 eclipse.preferences.version=1
+idePrefixKey=
+projectKey=myapp
+serverId=SonarCloud/saddikutireddy
+sqPrefixKey=

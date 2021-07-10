@@ -8,10 +8,13 @@ public class ImprovedLinearSearch {
 	
 	public static void main(String[] args) {
 		
-		int arr [] = {20,30,40,90,10,12,55,23,66,76};
+		ImprovedLinearSearch improvedLinearSearch = new ImprovedLinearSearch();
+		
+		
+		int [] arr = {20,30,40,90,10,12,55,23,66,76};
 		int searchItem = 12;
 		
-		int searchIndex = search(arr,searchItem);
+		int searchIndex = improvedLinearSearch.search(arr,searchItem);
 		
 		if(searchIndex == -1) {
 			LOGGER.info("Item not found in the given array");
@@ -21,7 +24,7 @@ public class ImprovedLinearSearch {
 		
 	}
 
-	public static int search(int[] arr, int searchItem) {
+	public int search(int[] arr, int searchItem) {
 		int position = -1;
 		int right = arr.length-1;
 		
