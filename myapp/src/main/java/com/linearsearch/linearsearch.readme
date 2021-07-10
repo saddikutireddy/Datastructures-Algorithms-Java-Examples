@@ -3,6 +3,7 @@ Imp notes:
 1. Linear search is used to search a key element from multiple elements. 
 2. Linear search is less used today because it is slower than binary search and hashing.
 
+
 Algorithm:
 
 Step 1: Traverse the array
