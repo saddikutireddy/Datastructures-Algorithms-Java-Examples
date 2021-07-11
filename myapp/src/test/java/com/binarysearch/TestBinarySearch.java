@@ -1,4 +1,4 @@
-package com.linearsearch;
+package com.binarysearch;
 
 import static org.junit.Assert.assertEquals;
 
