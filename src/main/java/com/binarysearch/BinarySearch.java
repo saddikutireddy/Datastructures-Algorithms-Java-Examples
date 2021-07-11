@@ -10,12 +10,11 @@ public class BinarySearch {
 
 	public static void main(String[] args) {
 		int [] arr  = { 2, 3, 4, 10, 40 };
-		BinarySearch binarySearch =new BinarySearch();
-		binarySearch.binarySearch(arr, 0, arr.length - 1, 10);
+		binarySearch(arr, 0, arr.length - 1, 10);
 
 	}
 
-	public boolean binarySearch(int [] arr, int left, int r, int x) {
+	public static boolean binarySearch(int [] arr, int left, int r, int x) {
 		Arrays.sort(arr);
 		if (r >= left) {
 			int mid = left + (r - left) / 2;
