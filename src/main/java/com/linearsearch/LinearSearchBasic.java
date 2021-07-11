@@ -9,15 +9,8 @@ public class LinearSearchBasic {
 	public static void main(String[] args) {
 
 		int[] arr = { 20, 30, 40, 90, 10, 12, 55, 23, 66, 76 };
-		int searchItem = 12;
 		LinearSearchBasic linearSearchBasic = new LinearSearchBasic();
-		int searchIndex = linearSearchBasic.search(arr, searchItem);
-
-		if (searchIndex == -1) {
-			LOGGER.info("\"Item not found in the given array\"");
-		} else {
-			LOGGER.info("\"Item found at position: \"" + searchIndex);
-		}
+		linearSearchBasic.search(arr, 12);
 
 	}
 
@@ -26,9 +19,11 @@ public class LinearSearchBasic {
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == searchItem) {
+				LOGGER.info("\"Item found at position: \"" + i);
 				return i;
 			}
 		}
+		LOGGER.info("\"Item not found in the given array\"");
 		return position;
 	}
 

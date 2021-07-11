@@ -9,15 +9,10 @@ public class BinarySearch {
 	private static final Logger LOGGER = Logger.getLogger(BinarySearch.class);
 
 	public static void main(String[] args) {
-
 		int [] arr  = { 2, 3, 4, 10, 40 };
-		int n = arr.length;
-		int x = 10;
 		BinarySearch binarySearch =new BinarySearch();
-		if (!binarySearch.binarySearch(arr, 0, n - 1, x))
-			LOGGER.info("Element not present");
-		else
-			LOGGER.info("Element found");
+		binarySearch.binarySearch(arr, 0, arr.length - 1, 10);
+
 	}
 
 	public boolean binarySearch(int [] arr, int left, int r, int x) {
@@ -25,14 +20,16 @@ public class BinarySearch {
 		if (r >= left) {
 			int mid = left + (r - left) / 2;
 
-			if (arr[mid] == x)
+			if (arr[mid] == x) {
+				LOGGER.info("Element found");
 				return true;
-
+			}
 			if (arr[mid] > x)
 				return binarySearch(arr, left, mid - 1, x);
 
 			return binarySearch(arr, mid + 1, r, x);
 		}
+		LOGGER.info("Element not present");
 		return false;
 	}
 

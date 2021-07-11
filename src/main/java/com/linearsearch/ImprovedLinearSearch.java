@@ -9,19 +9,9 @@ public class ImprovedLinearSearch {
 	public static void main(String[] args) {
 		
 		ImprovedLinearSearch improvedLinearSearch = new ImprovedLinearSearch();
-		
-		
 		int [] arr = {20,30,40,90,10,12,55,23,66,76};
-		int searchItem = 12;
-		
-		int searchIndex = improvedLinearSearch.search(arr,searchItem);
-		
-		if(searchIndex == -1) {
-			LOGGER.info("Item not found in the given array");
-		}else {
-			LOGGER.info("Item found at position: "+searchIndex);
-		}
-		
+		improvedLinearSearch.search(arr,12);
+				
 	}
 
 	public int search(int[] arr, int searchItem) {
@@ -31,17 +21,17 @@ public class ImprovedLinearSearch {
 		for (int left = 0; left <= right;left++,right--) {
 			
 			if(arr[left] == searchItem) {
-				LOGGER.info("Found iteam in left search " +left);
+				LOGGER.info("Found iteam in left search at position: " +left);
 				return left;
 			}
 			
 			if(arr[right] == searchItem) {
-				LOGGER.info("Found iteam in right search " +right);
+				LOGGER.info("Found iteam in right search at position: " +right);
 				return right;
 			}
 			
 		}
-		
+		LOGGER.info("Item not found in the given array");
 		return position;
 	}
 		
