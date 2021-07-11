@@ -1,5 +1,7 @@
 package com.binarysearch;
 
+import java.util.Arrays;
+
 import org.apache.log4j.Logger;
 
 public class BinarySearch {
@@ -11,29 +13,27 @@ public class BinarySearch {
 		int [] arr  = { 2, 3, 4, 10, 40 };
 		int n = arr.length;
 		int x = 10;
-		int result = binarySearch(arr, 0, n - 1, x);
-		if (result == -1)
+		BinarySearch binarySearch =new BinarySearch();
+		if (!binarySearch.binarySearch(arr, 0, n - 1, x))
 			LOGGER.info("Element not present");
 		else
-			LOGGER.info("Element found at index " + result);
+			LOGGER.info("Element found");
 	}
 
-	public static int binarySearch(int [] arr, int left, int r, int x) {
+	public boolean binarySearch(int [] arr, int left, int r, int x) {
+		Arrays.sort(arr);
 		if (r >= left) {
 			int mid = left + (r - left) / 2;
 
 			if (arr[mid] == x)
-				return mid;
+				return true;
 
 			if (arr[mid] > x)
 				return binarySearch(arr, left, mid - 1, x);
 
 			return binarySearch(arr, mid + 1, r, x);
 		}
-
-		// We reach here when element is not present
-		// in array
-		return -1;
+		return false;
 	}
 
 }
